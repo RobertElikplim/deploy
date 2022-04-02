@@ -69,7 +69,7 @@ export default {
     };
   },
   created(){
-    let apiURL1 = `http://localhost:3000/customers/${this.$route.params.id}`; 
+    let apiURL1 = `customers/${this.$route.params.id}`; 
         axios.get(apiURL1).then((res) => { 
         this.full_name = res.data.first_name + ' ' + res.data.last_name;
         this.phone = res.data.phone;
@@ -78,7 +78,7 @@ export default {
   methods: {
     async saveInvoice() {
       try {
-        await axios.post("http://localhost:3000/invoices", {
+        await axios.post("invoices", {
           cust_id: `${this.$route.params.id}`,
           invoice_date: this.invoice_date,
           payment_status: "Not Paid",

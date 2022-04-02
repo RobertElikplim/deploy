@@ -82,11 +82,11 @@ export default {
   },
   created: function () {
     this.getCustomerById();
-     let apiURL = `http://localhost:3000/services`; 
+     let apiURL = `services`; 
         axios.get(apiURL).then((res) => { 
           this.serviceSelection = res.data;
     });
-    let apiURL1 = `http://localhost:3000/vendors`; 
+    let apiURL1 = `vendors`; 
         axios.get(apiURL1).then((res) => { 
           this.vendorSelection = res.data;
     });
@@ -95,7 +95,7 @@ export default {
     async getCustomerById() {
       try {
         const response = await axios.get(
-          `http://localhost:3000/vendorpay/${this.$route.params.id}`
+          `vendorpay/${this.$route.params.id}`
         );
         this.amountDue = response.data.amount_due;
         this.payAmount = response.data.payment_amount;
@@ -110,7 +110,7 @@ export default {
     async updatePayment() {
       try {
         await axios.put(
-          `http://localhost:3000/vendorpay/${this.$route.params.id}`,
+          `vendorpay/${this.$route.params.id}`,
           {
             amount_due: this.amountDue,
             payment_amount: this.payAmount,

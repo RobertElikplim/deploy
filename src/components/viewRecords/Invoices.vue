@@ -64,7 +64,7 @@ export default {
     // Get All invoices
     async getInvoices() {
       try {
-        const response = await axios.get("http://localhost:3000/invoices");
+        const response = await axios.get("invoices");
         this.invoices = response.data;
       } catch (err) {
         console.log(err);
@@ -78,7 +78,7 @@ export default {
     async deleteInvoice(id) {
       try {
         if (window.confirm("Do you really want to delete?")){
-        await axios.delete(`http://localhost:3000/invoices/${id}`);
+        await axios.delete(`invoices/${id}`);
         }
         this.getInvoices();
       } catch (err) {

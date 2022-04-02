@@ -39,7 +39,7 @@ export default {
     async getCustomerById() {
       try {
         const response = await axios.get(
-          `http://localhost:3000/items/${this.$route.params.id}`
+          `items/${this.$route.params.id}`
         );
         this.itemType = response.data.item_type;
       } catch (err) {
@@ -50,7 +50,7 @@ export default {
     async updateItem() {
       try {
         await axios.put(
-          `http://localhost:3000/items/${this.$route.params.id}`,
+          `items/${this.$route.params.id}`,
           {
             item_type: this.itemType,
           }

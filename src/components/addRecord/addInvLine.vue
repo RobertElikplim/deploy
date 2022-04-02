@@ -79,15 +79,15 @@ export default {
     };
   },
   created(){
-    let apiURL1 = `http://localhost:3000/invoices`; 
+    let apiURL1 = `invoices`; 
         axios.get(apiURL1).then((res) => { 
           this.invoiceSelection = res.data;
     });
-     let apiURL2 = `http://localhost:3000/items`; 
+     let apiURL2 = `items`; 
         axios.get(apiURL2).then((res) => { 
           this.itemSelection = res.data;
     });
-     let apiURL3 = `http://localhost:3000/services`; 
+     let apiURL3 = `services`; 
         axios.get(apiURL3).then((res) => { 
           this.serviceSelection = res.data;
     });
@@ -96,7 +96,7 @@ export default {
     // Create New customer
     async saveInvoiceLine() {
       try {
-        await axios.post("http://localhost:3000/invoicesline", {
+        await axios.post("invoicesline", {
           invoice_id: this.invoiceID,
           item_id: this.itemID,
           item_price: this.itemPrice,

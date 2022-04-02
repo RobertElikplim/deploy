@@ -52,7 +52,7 @@ export default {
     // Get All services
     async getServices() {
       try {
-        const response = await axios.get("http://localhost:3000/services");
+        const response = await axios.get("services");
         this.services = response.data;
       } catch (err) {
         console.log(err);
@@ -63,7 +63,7 @@ export default {
     async deleteService(id) {
       try {
         if (window.confirm("Do you really want to delete?")){
-        await axios.delete(`http://localhost:3000/services/${id}`);
+        await axios.delete(`services/${id}`);
         }
         this.getServices();
       } catch (err) {

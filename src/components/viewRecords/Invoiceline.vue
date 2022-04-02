@@ -57,7 +57,7 @@ export default {
     // Get All invoice_line
     async getInvoiceLine() {
       try {
-        const response = await axios.get("http://localhost:3000/invoicesline");
+        const response = await axios.get("invoicesline");
         this.invoice_line = response.data;
       } catch (err) {
         console.log(err);
@@ -68,7 +68,7 @@ export default {
     async deleteInvline(id) {
       try {
         if (window.confirm("Do you really want to delete?")){
-        await axios.delete(`http://localhost:3000/invoicesline/${id}`);
+        await axios.delete(`invoicesline/${id}`);
         }
         this.getInvoiceLine();
       } catch (err) {

@@ -113,7 +113,7 @@ export default {
 			};
 		},
 		mounted() {
-			let apiURL = `http://localhost:3000/invoiceList`;
+			let apiURL = `invoiceList`;
 			//Resets the list of queried data
 			this.queryData = [];
 			axios.get(apiURL).then((resp) => {
@@ -128,13 +128,13 @@ export default {
 					let apiURL = "";
 					//Checks which filters are needed for URL structure
 					if(this.searchBy === "Client Name") {
-						apiURL = `http://localhost:3000/invoiceList/name/${this.nameInput}`;
+						apiURL = `invoiceList/name/${this.nameInput}`;
 					} else if(this.searchBy === "Client Number") {
-						apiURL = `http://localhost:3000/invoiceList/phone/${this.phoneInput}`;
+						apiURL = `invoiceList/phone/${this.phoneInput}`;
 					} else if(this.searchBy === "Date Range") {
-						apiURL = `http://localhost:3000/invoiceList/date/${this.date1}/${this.date2}`;	
+						apiURL = `invoiceList/date/${this.date1}/${this.date2}`;	
 					} else if(this.searchBy === "Invoice ID") {
-						apiURL = `http://localhost:3000/invoiceList/${this.invoiceid}`;											
+						apiURL = `invoiceList/${this.invoiceid}`;											
 					}
 					//Resets the list of queried data
 					this.queryData = [];
@@ -151,7 +151,7 @@ export default {
 					this.phoneInput = "";
 				},
 				resetForm() {
-					let apiURL = "http://localhost:3000/invoiceList";
+					let apiURL = "invoiceList";
 					//Resets the list of queried data
 					this.queryData = [];
 					axios.get(apiURL).then((resp) => {
@@ -176,7 +176,7 @@ export default {
 				async deleteInvoice(id) {
 					try {
 						if (window.confirm("Do you really want to delete?")){
-						await axios.delete(`http://localhost:3000/invoices/${id}`);
+						await axios.delete(`invoices/${id}`);
 						}
 						window.location.reload();
 					} catch (err) {

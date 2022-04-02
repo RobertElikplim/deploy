@@ -87,7 +87,7 @@ export default {
     async getVendorsByID() {
       try {
         const response = await axios.get(
-          `http://localhost:3000/vendors/${this.$route.params.id}`
+          `vendors/${this.$route.params.id}`
         );
         this.fullName = response.data.vendor_name;
         this.phone = response.data.vendor_phone;
@@ -103,7 +103,7 @@ export default {
     async updateVendor() {
       try {
         await axios.put(
-          `http://localhost:3000/vendors/${this.$route.params.id}`,
+          `vendors/${this.$route.params.id}`,
           {
             vendor_name: this.fullName,
             vendor_phone: this.phone,

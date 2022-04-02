@@ -52,7 +52,7 @@ export default {
     // Create New customer
     async saveService() {
       try {
-        await axios.post("http://localhost:3000/services", {
+        await axios.post("services", {
           service_desc: this.serviceDesc,
           service_outsourced: this.serviceOutsourced,
         });

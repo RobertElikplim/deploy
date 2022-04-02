@@ -70,7 +70,7 @@ export default {
 		};
 	},
 	mounted() {
-		let apiURL = `http://localhost:3000/customers`;
+		let apiURL = `customers`;
 		//Resets the list of queried data
 		this.queryData = [];
 		axios.get(apiURL).then((resp) => {
@@ -85,9 +85,9 @@ export default {
 			let apiURL = "";
 			//Checks which filters are needed for URL structure
 			if (this.searchBy === "Client Name") {
-				apiURL = `http://localhost:3000/customers/filter/name/${this.nameInput}`;
+				apiURL = `customers/filter/name/${this.nameInput}`;
 			} else if (this.searchBy === "Client Number") {
-				apiURL = `http://localhost:3000/customers/filter/phone/${this.phoneInput}`;
+				apiURL = `customers/filter/phone/${this.phoneInput}`;
 			}
 			//Resets the list of queried data
 			this.queryData = [];
@@ -103,7 +103,7 @@ export default {
 			this.phoneInput = "";
 		},
 		resetForm() {
-			let apiURL = "http://localhost:3000/customers";
+			let apiURL = "customers";
 			//Resets the list of queried data
 			this.queryData = [];
 			axios.get(apiURL).then((resp) => {
@@ -121,7 +121,7 @@ export default {
 		async deleteCustomer(id) {
 			try {
 				if (window.confirm("Do you really want to delete?")) {
-					await axios.delete(`http://localhost:3000/customers/${id}`);
+					await axios.delete(`customers/${id}`);
 				}
 				window.location.reload();
 			} catch (err) {

@@ -81,11 +81,11 @@ export default {
     };
   },
   created(){
-    let apiURL = `http://localhost:3000/services`; 
+    let apiURL = `services`; 
         axios.get(apiURL).then((res) => { 
           this.serviceSelection = res.data;
     });
-    let apiURL1 = `http://localhost:3000/vendors`; 
+    let apiURL1 = `vendors`; 
         axios.get(apiURL1).then((res) => { 
           this.vendorSelection = res.data;
     });
@@ -94,7 +94,7 @@ export default {
     // Create New customer
     async savePayment() {
       try {
-        await axios.post("http://localhost:3000/vendorpay", {
+        await axios.post("vendorpay", {
           amount_due: this.amountDue,
           payment_amount: this.payAmount,
           service_desc: this.serviceDesc,

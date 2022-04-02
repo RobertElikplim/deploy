@@ -37,7 +37,7 @@ export default {
     // Create New customer
     async saveItem() {
       try {
-        await axios.post("http://localhost:3000/items", {
+        await axios.post("items", {
           item_type: this.itemType,
         });
         this.$router.push("/items");

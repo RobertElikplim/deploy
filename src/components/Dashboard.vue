@@ -76,7 +76,7 @@ export default {
   methods: {
     async getVendorPayment() {
       try {
-        const response = await axios.get("http://localhost:3000/outsvpay");
+        const response = await axios.get("outsvpay");
         this.payments = response.data;
       } catch (err) {
         console.log(err);
@@ -84,7 +84,7 @@ export default {
     },
     async getDueToday() {
       try {
-        const response = await axios.get("http://localhost:3000/notpicked");
+        const response = await axios.get("notpicked");
         this.dues = response.data;
       } catch (err) {
         console.log(err);
@@ -93,7 +93,7 @@ export default {
     async markPicked(id) {
       try {
         if (window.confirm("Do you really want to mark order as PICKED?")){
-        await axios.put(`http://localhost:3000/pickedup/${id}`);
+        await axios.put(`pickedup/${id}`);
         }
         window.location.reload();
       } catch (err) {
@@ -102,7 +102,7 @@ export default {
     },
     async getInvoices() {
       try {
-        const response = await axios.get("http://localhost:3000/invoices");
+        const response = await axios.get("invoices");
         this.invoices = response.data;
       } catch (err) {
         console.log(err);

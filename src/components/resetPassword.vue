@@ -49,7 +49,7 @@ export default{
         async resetLogin() {
       try {
         await axios.put(
-          `http://localhost:3000/user/${this.mail}/${this.lname}`,
+          `user/${this.mail}/${this.lname}`,
           {
             username: this.user,
             user_password: this.pass,

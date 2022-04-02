@@ -124,7 +124,7 @@ export default {
     async getInvoiceById() {
       try {
         const response = await axios.get(
-          `http://localhost:3000/invoiceList/${this.$route.params.id}`
+          `invoiceList/${this.$route.params.id}`
         );
         this.invoice = response.data
         // this.invoice_id = response.data.invoice_id;
@@ -143,7 +143,7 @@ export default {
     async updateInvoice() {
       try {
         await axios.put(
-          `http://localhost:3000/invoices/${this.$route.params.id}`,
+          `invoices/${this.$route.params.id}`,
           {
             cust_id: this.invoice.customer_id,
             invoice_date: this.invoice.invoice_date,

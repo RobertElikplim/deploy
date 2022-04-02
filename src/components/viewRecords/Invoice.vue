@@ -109,7 +109,7 @@ export default {
     async getInvoiceById() {
       try {
         const response = await axios.get(
-          `http://localhost:3000/invoiceList/${this.$route.params.id}`
+          `invoiceList/${this.$route.params.id}`
         );
         this.customer_name = response.data.customer_name;
         this.phone = response.data.phone;

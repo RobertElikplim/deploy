@@ -55,7 +55,7 @@ export default{
     },
     methods: {
         handleSubmitForm(){
-            let URL = 'http://localhost:3000/register';
+            let URL = 'register';
             axios.post(URL, this.login).then(() => {
                 this.$router.push('/')
                 this.login = {

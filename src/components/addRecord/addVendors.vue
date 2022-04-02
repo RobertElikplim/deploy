@@ -84,7 +84,7 @@ export default {
   methods: {
     async saveVendor() {
       try {
-        await axios.post("http://localhost:3000/vendors", {
+        await axios.post("vendors", {
           vendor_name: this.fullName,
           vendor_phone: this.phone,
           vendor_address: this.address,

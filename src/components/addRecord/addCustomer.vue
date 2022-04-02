@@ -58,7 +58,7 @@ export default {
     // Create New customer
     async saveCustomer() {
       try {
-        await axios.post("http://localhost:3000/customers", {
+        await axios.post("customers", {
           first_name: this.firstName,
           last_name: this.lastName,
           phone: this.phoneNum,

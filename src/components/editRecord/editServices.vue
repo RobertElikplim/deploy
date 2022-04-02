@@ -54,7 +54,7 @@ export default {
     async getServiceByID() {
       try {
         const response = await axios.get(
-          `http://localhost:3000/services/${this.$route.params.id}`
+          `${this.$route.params.id}`
         );
         this.serviceDesc = response.data.service_desc;
         this.serviceOutsourced = response.data.service_outsourced;
@@ -66,7 +66,7 @@ export default {
     async updateService() {
       try {
         await axios.put(
-          `http://localhost:3000/services/${this.$route.params.id}`,
+          `${this.$route.params.id}`,
           {
             service_desc: this.serviceDesc,
             service_outsourced: this.serviceOutsourced,

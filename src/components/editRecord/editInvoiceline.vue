@@ -82,15 +82,15 @@ export default {
   },
   created: function () {
     this.getInvlineByID();
-     let apiURL1 = `http://localhost:3000/invoices`; 
+     let apiURL1 = `invoices`; 
         axios.get(apiURL1).then((res) => { 
           this.invoiceSelection = res.data;
     });
-     let apiURL2 = `http://localhost:3000/items`; 
+     let apiURL2 = `items`; 
         axios.get(apiURL2).then((res) => { 
           this.itemSelection = res.data;
     });
-     let apiURL3 = `http://localhost:3000/services`; 
+     let apiURL3 = `services`; 
         axios.get(apiURL3).then((res) => { 
           this.serviceSelection = res.data;
     });
@@ -99,7 +99,7 @@ export default {
     async getInvlineByID() {
       try {
         const response = await axios.get(
-          `http://localhost:3000/invoicesline/${this.$route.params.id}`
+          `invoicesline/${this.$route.params.id}`
         );
         this.invoiceID = response.data.invoice_id;
         this.itemID = response.data.item_id;
@@ -113,7 +113,7 @@ export default {
     async updateInvoiceTotalByID() {
       try {
         await axios.put(
-          `http://localhost:3000/invoices/invoice_total/${this.invoiceID}`,
+          `invoices/invoice_total/${this.invoiceID}`,
         );
         this.$router.push(`/invoice/view/${this.invoiceID}`);
       } catch (err) {
@@ -124,7 +124,7 @@ export default {
     async updateInvline() {
       try {
         await axios.put(
-          `http://localhost:3000/invoicesline/${this.$route.params.id}`,
+          `invoicesline/${this.$route.params.id}`,
           {
             invoice_id: this.invoiceID,
             item_id: this.itemID,

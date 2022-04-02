@@ -55,7 +55,7 @@ export default {
     // Get All customers
     async getCustomers() {
       try {
-        const response = await axios.get("http://localhost:3000/customers");
+        const response = await axios.get("customers");
         this.customers = response.data;
       } catch (err) {
         console.log(err);
@@ -66,7 +66,7 @@ export default {
     async deleteCustomer(id) {
       try {
         if (window.confirm("Do you really want to delete?")){
-          await axios.delete(`http://localhost:3000/customers/${id}`);
+          await axios.delete(`customers/${id}`);
         }
         this.getCustomers();
       } catch (err) {
