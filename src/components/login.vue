@@ -41,7 +41,7 @@ export default {
     methods: {
         async openLogin() {
         try {
-            let URL = (`http://localhost:3000/login/${this.username}/${this.user_password}`);
+            let URL = (`https://pudcapi.herokuapp.com/login/${this.username}/${this.user_password}`);
             await axios.get(URL).then((res) => {
                 this.signin = res.data;
                 localStorage.setItem('stuff', JSON.stringify(this.signin));
