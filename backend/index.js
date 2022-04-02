@@ -5,6 +5,7 @@ import cors from "cors";
 // import routes
 import Router from "./routes/routes.js";
 
+
 // init express
 const app = express();
 
@@ -17,5 +18,15 @@ app.use(cors());
 // use router
 app.use(Router);
 
+// To serve our frontend
+app.get(/.*/, (_req, res) => {
+    const p = path.resolve(__dirname, '../pudc/dist/index.html');
+    res.sendFile(p);
+});
 
-app.listen(3000, () => console.log('Server running at http://localhost:3000')); 
+app.use((_req, res) => {
+    res.status(404).send("<h1>unable to find that</h1>");
+});
+
+
+app.listen(process.env.PORT, '0.0.0.0', () => console.log("Server running at " + process.env.PORT)); 

@@ -4,24 +4,26 @@
   "description": "",
   "type": "module",
   "main": "index.js",
+  "dependencies": {
+    "axios": "^0.26.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.3",
+    "sha1": "^1.1.1"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RobertElikplim/BRONNAS-TECH.git"
+    "url": "git+https://github.com/RobertElikplim/deploy.git"
   },
-  "author": "Busch,Ortega,Ngo,Sengchiam,Nguyen,Roman,Adeti",
+  "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/RobertElikplim/BRONNAS-TECH/issues"
+    "url": "https://github.com/RobertElikplim/deploy/issues"
   },
-  "homepage": "https://github.com/RobertElikplim/BRONNAS-TECH#readme",
-  "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.17.2",
-    "mysql": "^2.18.1",
-    "mysql2": "^2.3.3",
-    "sha1": "^1.1.1"
-  }
+  "homepage": "https://github.com/RobertElikplim/deploy#readme"
 }
