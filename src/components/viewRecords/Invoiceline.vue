@@ -57,7 +57,7 @@ export default {
     // Get All invoice_line
     async getInvoiceLine() {
       try {
-        const response = await axios.get("invoicesline");
+        const response = await axios.get("https://pudcapi.herokuapp.com/invoicesline");
         this.invoice_line = response.data;
       } catch (err) {
         console.log(err);
@@ -68,7 +68,7 @@ export default {
     async deleteInvline(id) {
       try {
         if (window.confirm("Do you really want to delete?")){
-        await axios.delete(`invoicesline/${id}`);
+        await axios.delete(`https://pudcapi.herokuapp.com/invoicesline/${id}`);
         }
         this.getInvoiceLine();
       } catch (err) {

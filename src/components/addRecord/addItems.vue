@@ -37,7 +37,7 @@ export default {
     // Create New customer
     async saveItem() {
       try {
-        await axios.post("items", {
+        await axios.post("https://pudcapi.herokuapp.com/items", {
           item_type: this.itemType,
         });
         this.$router.push("/items");

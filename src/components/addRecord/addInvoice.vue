@@ -78,7 +78,7 @@ export default {
   methods: {
     async saveInvoice() {
       try {
-        await axios.post("invoices", {
+        await axios.post("https://pudcapi.herokuapp.com/invoices", {
           cust_id: `${this.$route.params.id}`,
           invoice_date: this.invoice_date,
           payment_status: "Not Paid",

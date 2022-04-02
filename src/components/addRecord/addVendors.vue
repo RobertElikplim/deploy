@@ -84,7 +84,7 @@ export default {
   methods: {
     async saveVendor() {
       try {
-        await axios.post("vendors", {
+        await axios.post("https://pudcapi.herokuapp.com/vendors", {
           vendor_name: this.fullName,
           vendor_phone: this.phone,
           vendor_address: this.address,

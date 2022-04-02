@@ -57,7 +57,7 @@ export default {
     // Get All invoice_line
     async getInvoiceLine() {
       try {
-        const response = await axios.get(`invoice/invoiceline/${this.$route.params.id}`);
+        const response = await axios.get(`https://pudcapi.herokuapp.com/invoice/invoiceline/${this.$route.params.id}`);
         this.invoice_line = response.data;
       } catch (err) {
         console.log(err);
@@ -67,8 +67,8 @@ export default {
     async deleteInvline(id) {
       try {
         if (window.confirm("Do you really want to delete?")){
-        await axios.delete(`invoicesline/${id}`);
-        await axios.put(`invoices/invoice_total/${this.$route.params.id}`);
+        await axios.delete(`https://pudcapi.herokuapp.com/invoicesline/${id}`);
+        await axios.put(`https://pudcapi.herokuapp.com/invoices/invoice_total/${this.$route.params.id}`);
         }
         this.$router.go();
       } catch (err) {

@@ -52,7 +52,7 @@ export default {
     // Get All items
     async getItems() {
       try {
-        const response = await axios.get("items");
+        const response = await axios.get("https://pudcapi.herokuapp.com/items");
         this.items = response.data;
       } catch (err) {
         console.log(err);
@@ -63,7 +63,7 @@ export default {
     async deleteCustomer(id) {
       try {
         if (window.confirm("Do you really want to delete?")){
-        await axios.delete(`items/${id}`);
+        await axios.delete(`https://pudcapi.herokuapp.com/items/${id}`);
         }
         this.getItems();
       } catch (err) {

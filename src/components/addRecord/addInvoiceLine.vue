@@ -96,7 +96,7 @@ export default {
         await axios.put(
           `invoices/invoice_total/${this.$route.params.id}`,
         );
-        this.$router.push(`/invoice/view/${this.$route.params.id}`);
+        this.$router.push(`https://pudcapi.herokuapp.com/invoice/view/${this.$route.params.id}`);
       } catch (err) {
         console.log(err);
       }

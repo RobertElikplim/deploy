@@ -82,11 +82,11 @@ export default {
   },
   created: function () {
     this.getCustomerById();
-     let apiURL = `services`; 
+     let apiURL = `https://pudcapi.herokuapp.com/services`; 
         axios.get(apiURL).then((res) => { 
           this.serviceSelection = res.data;
     });
-    let apiURL1 = `vendors`; 
+    let apiURL1 = `https://pudcapi.herokuapp.com/vendors`; 
         axios.get(apiURL1).then((res) => { 
           this.vendorSelection = res.data;
     });
@@ -95,7 +95,7 @@ export default {
     async getCustomerById() {
       try {
         const response = await axios.get(
-          `vendorpay/${this.$route.params.id}`
+          `https://pudcapi.herokuapp.com/vendorpay/${this.$route.params.id}`
         );
         this.amountDue = response.data.amount_due;
         this.payAmount = response.data.payment_amount;
@@ -110,7 +110,7 @@ export default {
     async updatePayment() {
       try {
         await axios.put(
-          `vendorpay/${this.$route.params.id}`,
+          `https://pudcapi.herokuapp.com/vendorpay/${this.$route.params.id}`,
           {
             amount_due: this.amountDue,
             payment_amount: this.payAmount,

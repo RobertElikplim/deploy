@@ -58,7 +58,7 @@ export default {
     // Get All payments
     async getVendors() {
       try {
-        const response = await axios.get("vendorpay");
+        const response = await axios.get("https://pudcapi.herokuapp.com/vendorpay");
         this.payments = response.data;
       } catch (err) {
         console.log(err);
@@ -69,7 +69,7 @@ export default {
     async deletePayment(id) {
       try {
         if (window.confirm("Do you really want to delete?")){
-        await axios.delete(`vendorpay/${id}`);
+        await axios.delete(`https://pudcapi.herokuapp.com/vendorpay/${id}`);
         }
         this.getVendors();
       } catch (err) {

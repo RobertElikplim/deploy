@@ -81,11 +81,11 @@ export default {
     };
   },
   created(){
-    let apiURL = `services`; 
+    let apiURL = `https://pudcapi.herokuapp.com/services`; 
         axios.get(apiURL).then((res) => { 
           this.serviceSelection = res.data;
     });
-    let apiURL1 = `vendors`; 
+    let apiURL1 = `https://pudcapi.herokuapp.com/vendors`; 
         axios.get(apiURL1).then((res) => { 
           this.vendorSelection = res.data;
     });
@@ -94,7 +94,7 @@ export default {
     // Create New customer
     async savePayment() {
       try {
-        await axios.post("vendorpay", {
+        await axios.post("https://pudcapi.herokuapp.com/vendorpay", {
           amount_due: this.amountDue,
           payment_amount: this.payAmount,
           service_desc: this.serviceDesc,

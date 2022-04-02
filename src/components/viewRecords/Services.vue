@@ -52,7 +52,7 @@ export default {
     // Get All services
     async getServices() {
       try {
-        const response = await axios.get("services");
+        const response = await axios.get("https://pudcapi.herokuapp.com/services");
         this.services = response.data;
       } catch (err) {
         console.log(err);
@@ -63,7 +63,7 @@ export default {
     async deleteService(id) {
       try {
         if (window.confirm("Do you really want to delete?")){
-        await axios.delete(`services/${id}`);
+        await axios.delete(`https://pudcapi.herokuapp.com/services/${id}`);
         }
         this.getServices();
       } catch (err) {

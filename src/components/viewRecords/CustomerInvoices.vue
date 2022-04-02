@@ -101,7 +101,7 @@ export default {
     };
   },
 	mounted() {
-		let apiURL = `customers/${this.$route.params.id}/invoices`;
+		let apiURL = `https://pudcapi.herokuapp.com/customers/${this.$route.params.id}/invoices`;
 		//Resets the list of queried data
 		this.queryData = [];
 		axios.get(apiURL).then((resp) => {
@@ -116,13 +116,13 @@ export default {
         let apiURL = "";
         //Checks which filters are needed for URL structure
         if (this.searchBy === "Invoice ID") {
-          apiURL = `customers/${this.$route.params.id}/invoices/id/${this.invoiceid}`;
+          apiURL = `https://pudcapi.herokuapp.com/customers/${this.$route.params.id}/invoices/id/${this.invoiceid}`;
         } else if (this.searchBy === "Date Range") {
-          apiURL = `customers/${this.$route.params.id}/invoices/date/${this.date1}/${this.date2}`;
+          apiURL = `https://pudcapi.herokuapp.com/customers/${this.$route.params.id}/invoices/date/${this.date1}/${this.date2}`;
         } else if (this.searchBy === "Payment Status") {
-          apiURL = `customers/${this.$route.params.id}/invoices/pay/${this.paymentstatus}`;
+          apiURL = `https://pudcapi.herokuapp.com/customers/${this.$route.params.id}/invoices/pay/${this.paymentstatus}`;
         } else if (this.searchBy === "Pickup Status") {
-          apiURL = `customers/${this.$route.params.id}/invoices/pick/${this.pickupstatus}`; 
+          apiURL = `https://pudcapi.herokuapp.com/customers/${this.$route.params.id}/invoices/pick/${this.pickupstatus}`; 
         }         
 			//Resets the list of queried data
 			this.queryData = [];
@@ -140,7 +140,7 @@ export default {
         this.paymentstatus = "";
 		},
 		resetForm() {
-			let apiURL = `customers/${this.$route.params.id}/invoices`;
+			let apiURL = `https://pudcapi.herokuapp.com/customers/${this.$route.params.id}/invoices`;
 			//Resets the list of queried data
 			this.queryData = [];
 			axios.get(apiURL).then((resp) => {
@@ -158,7 +158,7 @@ export default {
      async deleteInvoice(id) {
        try {
          if (window.confirm("Do you really want to delete?")){
-         await axios.delete(`invoices/${id}`);
+         await axios.delete(`https://pudcapi.herokuapp.com/invoices/${id}`);
          }
          this.getInvoices();
        } catch (err) {

@@ -96,7 +96,7 @@ export default {
     // Create New customer
     async saveInvoiceLine() {
       try {
-        await axios.post("invoicesline", {
+        await axios.post("https://pudcapi.herokuapp.com/invoicesline", {
           invoice_id: this.invoiceID,
           item_id: this.itemID,
           item_price: this.itemPrice,

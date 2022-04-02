@@ -56,7 +56,7 @@ export default {
     async getCustomerById() {
       try {
         const response = await axios.get(
-          `customers/${this.$route.params.id}`
+          `https://pudcapi.herokuapp.com/customers/${this.$route.params.id}`
         );
         this.firstName = response.data.first_name;
         this.lastName = response.data.last_name;
@@ -69,13 +69,13 @@ export default {
     async updateCustomer() {
       try {
         await axios.put(
-          `customers/${this.$route.params.id}`,
+          `https://pudcapi.herokuapp.com/customers/${this.$route.params.id}`,
           {
             first_name: this.firstName,
             last_name: this.lastName,
             phone: this.phoneNum,
           });
-        this.$router.push(`/customers/${this.$route.params.id}`);
+        this.$router.push(`https://pudcapi.herokuapp.com/customers/${this.$route.params.id}`);
       } catch (err) {
         console.log(err);
       }

@@ -56,7 +56,7 @@ export default {
     async getCustomerById() {
       try {
         const response = await axios.get(
-          `customers/${this.$route.params.id}`
+          `https://pudcapi.herokuapp.com/customers/${this.$route.params.id}`
         );
         this.firstName = response.data.first_name;
         this.lastName = response.data.last_name;

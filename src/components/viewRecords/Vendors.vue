@@ -61,7 +61,7 @@ export default {
     // Get All vendors
     async getVendors() {
       try {
-        const response = await axios.get("vendors");
+        const response = await axios.get("https://pudcapi.herokuapp.com/vendors");
         this.vendors = response.data;
       } catch (err) {
         console.log(err);
@@ -72,7 +72,7 @@ export default {
     async deleteVendor(id) {
       try {
         if (window.confirm("Do you really want to delete?")){
-        await axios.delete(`vendors/${id}`);
+        await axios.delete(`https://pudcapi.herokuapp.com/vendors/${id}`);
         }
         this.getVendors();
       } catch (err) {

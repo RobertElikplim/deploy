@@ -55,7 +55,7 @@ export default {
     // Get All customers
     async getCustomers() {
       try {
-        const response = await axios.get("customers");
+        const response = await axios.get("https://pudcapi.herokuapp.com/customers");
         this.customers = response.data;
       } catch (err) {
         console.log(err);
@@ -66,7 +66,7 @@ export default {
     async deleteCustomer(id) {
       try {
         if (window.confirm("Do you really want to delete?")){
-          await axios.delete(`customers/${id}`);
+          await axios.delete(`https://pudcapi.herokuapp.com/customers/${id}`);
         }
         this.getCustomers();
       } catch (err) {

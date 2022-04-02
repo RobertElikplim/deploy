@@ -58,7 +58,7 @@ export default {
     // Create New customer
     async saveCustomer() {
       try {
-        await axios.post("customers", {
+        await axios.post("https://pudcapi.herokuapp.com/customers", {
           first_name: this.firstName,
           last_name: this.lastName,
           phone: this.phoneNum,

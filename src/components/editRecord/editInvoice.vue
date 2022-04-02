@@ -124,7 +124,7 @@ export default {
     async getInvoiceById() {
       try {
         const response = await axios.get(
-          `invoiceList/${this.$route.params.id}`
+          `https://pudcapi.herokuapp.com/invoiceList/${this.$route.params.id}`
         );
         this.invoice = response.data
         // this.invoice_id = response.data.invoice_id;
@@ -143,7 +143,7 @@ export default {
     async updateInvoice() {
       try {
         await axios.put(
-          `invoices/${this.$route.params.id}`,
+          `https://pudcapi.herokuapp.com/invoices/${this.$route.params.id}`,
           {
             cust_id: this.invoice.customer_id,
             invoice_date: this.invoice.invoice_date,
@@ -154,7 +154,7 @@ export default {
             invoice_total: this.invoice.invoice_total
           }
         );
-        this.$router.push(`/invoice/view/${this.$route.params.id}`);
+        this.$router.push(`https://pudcapi.herokuapp.com/invoice/view/${this.$route.params.id}`);
       } catch (err) {
         console.log(err);
       }

@@ -52,7 +52,7 @@ export default {
     // Create New customer
     async saveService() {
       try {
-        await axios.post("services", {
+        await axios.post("https://pudcapi.herokuapp.com/services", {
           service_desc: this.serviceDesc,
           service_outsourced: this.serviceOutsourced,
         });
