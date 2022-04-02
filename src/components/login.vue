@@ -41,7 +41,8 @@ export default {
     methods: {
         async openLogin() {
         try {
-            await axios.get(`/login/${this.username}/${this.user_password}`).then((res) => {
+            let URL = (`login/${this.username}/${this.user_password}`);
+            await axios.get(URL).then((res) => {
                 this.signin = res.data;
                 localStorage.setItem('stuff', JSON.stringify(this.signin));
                 if( Object.keys(this.signin).length == 1 ){
