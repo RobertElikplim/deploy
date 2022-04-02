@@ -1,0 +1,18 @@
+{
+    "name": "bronnas",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "engines": {
+      "node": "12.16.1",
+      "npm": "6.14.4"
+    },
+    "scripts": {
+      "install": "cd ../backend && npm install",
+      "build": "npm run build",
+      "start": "nodemon ./backend/index.js",
+      "heroku-postbuild": "npm run build"
+    },
+    "author": "",
+    "license": "ISC"
+  }
