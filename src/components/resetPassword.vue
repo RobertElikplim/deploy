@@ -49,7 +49,7 @@ export default{
         async resetLogin() {
       try {
         await axios.put(
-          `user/${this.mail}/${this.lname}`,
+          `https://pudcapi.herokuapp.com/user/${this.mail}/${this.lname}`,
           {
             username: this.user,
             user_password: this.pass,

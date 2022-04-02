@@ -55,7 +55,7 @@ export default{
     },
     methods: {
         handleSubmitForm(){
-            let URL = 'register';
+            let URL = 'https://pudcapi.herokuapp.com/register';
             axios.post(URL, this.login).then(() => {
                 this.$router.push('/')
                 this.login = {
