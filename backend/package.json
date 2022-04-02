@@ -4,28 +4,24 @@
   "description": "",
   "type": "module",
   "main": "index.js",
-  "dependencies": {
-    "axios": "^0.26.1",
-    "cors": "^2.8.5",
-    "express": "^4.17.3",
-    "mysql": "^2.18.1",
-    "mysql2": "^2.3.3",
-    "nodemon": "^2.0.15",
-    "sha1": "^1.1.1"
-  },
-  "devDependencies": {},
   "scripts": {
-    "devStart": "nodemon index.js",
-    "start": "nodemon index.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RobertElikplim/deploy.git"
+    "url": "git+https://github.com/RobertElikplim/BRONNAS-TECH.git"
   },
-  "author": "",
+  "author": "Busch,Ortega,Ngo,Sengchiam,Nguyen,Roman,Adeti",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/RobertElikplim/deploy/issues"
+    "url": "https://github.com/RobertElikplim/BRONNAS-TECH/issues"
   },
-  "homepage": "https://github.com/RobertElikplim/deploy#readme"
+  "homepage": "https://github.com/RobertElikplim/BRONNAS-TECH#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.2",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.3",
+    "sha1": "^1.1.1"
+  }
 }

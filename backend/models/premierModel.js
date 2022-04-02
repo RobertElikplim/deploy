@@ -348,7 +348,7 @@ export const deleteInvoicesById = (id, result) => {
     });   
 }
 export const deleteItemById = (id, result) => {
-    db.query("DELETE FROM item WHERE item_id = ?", [id], (err, results) => {             
+    db.query("DELETE FROM items WHERE item_id = ?", [id], (err, results) => {             
         if(err) {
             console.log(err);
             result(err, null);
