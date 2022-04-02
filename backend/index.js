@@ -18,12 +18,6 @@ app.use(cors());
 // use router
 app.use(Router);
 
-// To serve our frontend
-app.get(/.*/, (_req, res) => {
-    const p = path.resolve(__dirname, '../pudc/dist/index.html');
-    res.sendFile(p);
-});
-
 app.use((_req, res) => {
     res.status(404).send("<h1>unable to find that</h1>");
 });
